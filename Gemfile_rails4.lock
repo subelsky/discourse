@@ -48,6 +48,9 @@ GEM
       rake (>= 0.8.7)
     arel (4.0.1)
     atomic (1.1.14)
+    autoscaler (0.8.0)
+      heroku-api
+      sidekiq (~> 2.7)
     barber (0.4.2)
       ember-source
       execjs
@@ -120,6 +123,9 @@ GEM
     guess_html_encoding (0.0.9)
     handlebars-source (1.1.2)
     hashie (2.0.5)
+    heroku-api (0.3.18)
+      excon (~> 0.27)
+      multi_json (~> 1.8)
     highline (1.6.20)
     hike (1.2.3)
     hiredis (0.4.5)
@@ -389,6 +395,7 @@ DEPENDENCIES
   active_model_serializers
   airbrake (= 3.1.2)
   annotate
+  autoscaler
   barber
   better_errors
   binding_of_caller
