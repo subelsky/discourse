@@ -1,0 +1,10 @@
+/CONTRIBUTING.md
+/Capfile.sample
+/Vagrantfile
+/chef
+/discourse.sublime-project
+/docs
+/log
+/pg_dumps
+/tmp/*
+/spec
