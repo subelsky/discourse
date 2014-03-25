@@ -226,3 +226,7 @@ group :profile do
 end
 
 gem 'autoscaler', require: false
+
+group :production do
+  gem 'exception_notification'
+end
