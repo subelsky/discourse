@@ -15,14 +15,14 @@ if Rails.env.production?
   Sidekiq.configure_server do |config|
     config.redis = sidekiq_redis
     config.server_middleware do |chain|
-      chain.add(Autoscaler::Sidekiq::Server, Autoscaler::HerokuScaler.new('sidekiq'), 60)
+      chain.add(Autoscaler::Sidekiq::Server, Autoscaler::HerokuScaler.new('worker'), 60)
     end
   end
 
   Sidekiq.configure_client do |config|
     config.redis = sidekiq_redis
     config.client_middleware do |chain|
-      chain.add Autoscaler::Sidekiq::Client, 'default' => Autoscaler::HerokuScaler.new('sidekiq')
+      chain.add Autoscaler::Sidekiq::Client, 'default' => Autoscaler::HerokuScaler.new('worker')
     end
   end
 else
